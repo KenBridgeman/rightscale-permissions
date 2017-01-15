@@ -6,12 +6,12 @@ require 'rightscale/permissions/version'
 Gem::Specification.new do |spec|
   spec.name          = "rightscale-permissions"
   spec.version       = Rightscale::Permissions::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.authors       = ["Ken Bridgeman"]
+  spec.email         = ["ksg.bridgeman@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{GET RightScale permissions for all accounts.}
+  spec.description   = %q{GET RightScale account_number, account_name, user_email, and role for all (or specified) accounts and output as CSV.  Primary usage is to perform audit against all accounts. }
+  spec.homepage      = "https://www.github.com/KenBridgeman/rightscale-permissions"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -19,8 +19,7 @@ Gem::Specification.new do |spec|
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
   else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
+    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
@@ -33,4 +32,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.14.a"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
+
+  spec.add_dependency "right_api_client"
+  spec.add_dependency "ruby-progressbar"
+  spec.add_dependency "OptionParser"
 end
