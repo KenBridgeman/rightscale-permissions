@@ -1,6 +1,5 @@
 require_relative "permissions/version"
 
-# NOTE: This relative reference might be a problem once the app is installed.
 require 'right_api_client'
 require 'ruby-progressbar'
 require 'optparse'

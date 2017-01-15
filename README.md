@@ -1,8 +1,13 @@
 # Rightscale::Permissions
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rightscale/permissions`. To experiment with that code, run `bin/console` for an interactive prompt.
+Get all permissions across all accounts and output in CSV format.
 
-TODO: Delete this and the text above, and describe your gem
+Output is of the form account_number, account_name, email, role.
+
+User is required to have a login and password with enterprise_manager access on the root account.  And, admin access on all accounts.
+
+At this time, error handling is minimal; i.e. if you don't have admin access on an account the application will crash.
+
 
 ## Installation
 
@@ -22,7 +27,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Usage: rightscale-permissions [options]
+
+        --email EMAIL
+                                     The RightScale email account with enterprise_manager on master account and admin on all other accounts.
+        --pwd PASSWORD
+                                     The RightScale password in a quoted string.
+        --masterAccount ACCOUNT_ID
+                                     RightScale master account id from which to retrieve all child accounts.  ex. 85729 from /api/accounts/85729
+        -h, --help                   Show this help message
 
 ## Development
 
@@ -32,7 +45,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rightscale-permissions. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/KenBridgeman/rightscale-permissions. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
